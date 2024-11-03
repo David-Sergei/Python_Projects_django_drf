@@ -7,6 +7,12 @@ from rest_framework.views import APIView
 from .models import Women
 from .serializers import WomenSerializer
 
+
+class WomenAPIList(generics.ListCreateAPIView):
+    queryset = Women.objects.all()
+    serializer_class = WomenSerializer
+
+
 class WomenAPIView(APIView):
     def get(self, request):
         w = Women.objects.all()
