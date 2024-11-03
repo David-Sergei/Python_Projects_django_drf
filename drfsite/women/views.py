@@ -39,7 +39,11 @@ class WomenAPIView(APIView):
         if not pk:
             return Response({"error": "Method DELETE not allowed"})
 
-        # здесь код для удаления записи с переданным pk
+        try:
+            instance = Women.objects.get(pk=pk)
+            instance.delete()
+        except:
+            return Response({"error": "Object not found"})
 
         return Response({"post": "delete post " + str(pk)})
 
