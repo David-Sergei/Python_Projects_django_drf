@@ -8,9 +8,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import GenericViewSet
 
-from .models import Women, Category
-from .permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
-from .serializers import WomenSerializer
+from women.models import Women, Category
+from women.permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
+from women.serializers import WomenSerializer
 
 
 class WomenAPIListPagination(PageNumberPagination):

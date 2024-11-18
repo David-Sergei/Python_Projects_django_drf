@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from .models import Women
+from women.models import Women
 
 admin.site.register(Women)
